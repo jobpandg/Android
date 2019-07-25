@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="smallViewHeight">1dp</dimen>
+    <dimen name="mainTabHeight">63dp</dimen>
+
+</resources>

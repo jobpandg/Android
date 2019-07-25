@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">JobHelper</string>
+    <string name="mainTab_orderPublish">发单</string>
+    <string name="mainTab_orderReceive">接单</string>
+    <string name="mainTab_message">消息中心</string>
+    <string name="mainTab_me">个人中心</string>
 </resources>
