@@ -12,7 +12,8 @@
     <ImageView
         android:id="@+id/iv_mainTab"
         android:layout_width="match_parent"
-        android:layout_height="45dp"
+        android:layout_height="40dp"
+        android:scaleType="center"
         android:scaleY="0.5"
         android:scaleX="0.5"
         tools:src="@mipmap/rocket_selected"/>
