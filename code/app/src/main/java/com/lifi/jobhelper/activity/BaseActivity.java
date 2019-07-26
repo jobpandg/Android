@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.KeyEvent;
+import android.view.View;
 
 import com.lifi.jobhelper.domain.BaseObject;
 import com.lifi.jobhelper.utils.ActivityUtil;
@@ -35,10 +36,21 @@ abstract public class BaseActivity extends AppCompatActivity {
     }
 
     @Override
+    public void setContentView(View view) {
+        super.setContentView(view);
+        init();
+    }
+
+    @Override
+    public void setContentView(int layoutResID) {
+        super.setContentView(layoutResID);
+        init();
+    }
+
+    @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ActivityUtil.getInstance().addActivityToList(getActivity());
-        init();
     }
 
     @Override

@@ -18,11 +18,9 @@
         android:id="@+id/tab_layout"
         android:layout_width="match_parent"
         android:layout_height="@dimen/mainTabHeight"
-        android:background="@color/mainTabBg">
+        android:background="@color/mainTabBg"
+        app:tabIndicatorHeight="0dp"
+        app:tabBackground="@android:color/transparent"/>
 
-    </android.support.design.widget.TabLayout>
-    
-    
-    
     
 </LinearLayout>

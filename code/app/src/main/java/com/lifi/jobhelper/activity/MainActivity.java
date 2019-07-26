@@ -4,24 +4,22 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.TableLayout;
+import android.widget.TextView;
 
 import com.lifi.jobhelper.R;
 import com.lifi.jobhelper.adpter.MainTabFragmentAdapter;
 
 public class MainActivity extends BaseActivity {
 
-    private final int []TAB_TITLES = new int[]{R.string.mainTab_orderPublish,
-                                                R.string.mainTab_orderReceive,
-                                                R.string.mainTab_message,
-                                                R.string.mainTab_me};
-    private final int []TAB_IMAGES = new int[]{R.drawable.selector_rocket,
-                                                R.drawable.selector_sword,
-                                                R.drawable.selector_message,
-                                                R.drawable.selector_me};
     private ViewPager vp;
     private TabLayout tab_layout;
     private MainTabFragmentAdapter adapter;
+    private LayoutInflater inflater;
 
     @Override
     public void initViews() {
@@ -31,13 +29,22 @@ public class MainActivity extends BaseActivity {
 
     @Override
     public void initDatas() {
-        adapter = new MainTabFragmentAdapter(getSupportFragmentManager());
+        adapter = new MainTabFragmentAdapter(getApplicationContext(), getSupportFragmentManager());
         vp.setAdapter(adapter);
+        vp.setCurrentItem(0);
+        inflater = LayoutInflater.from(this);
+        initTabs(tab_layout);
+    }
+
+    private void initTabs(TabLayout tabLayout) {
+        tabLayout.setupWithViewPager(vp);
+        for (int i = 0; i < tabLayout.getTabCount(); i++) {
+            tabLayout.getTabAt(i).setCustomView(adapter.getTabView(i));
+        }
     }
 
     @Override
     public void initListener() {
-        tab_layout.setupWithViewPager(vp);
         vp.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int i, float v, int i1) {
@@ -46,7 +53,7 @@ public class MainActivity extends BaseActivity {
 
             @Override
             public void onPageSelected(int i) {
-
+                tab_layout.setScrollPosition(i, 0f, true);
             }
 
             @Override
@@ -57,7 +64,8 @@ public class MainActivity extends BaseActivity {
         tab_layout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
-                vp.setCurrentItem(tab.getPosition(), false);
+                int position = tab.getPosition();
+                vp.setCurrentItem(position, false);
             }
 
             @Override

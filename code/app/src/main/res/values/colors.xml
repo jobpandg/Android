@@ -5,4 +5,5 @@
     <color name="colorAccent">#D81B60</color>
 
     <color name="mainTabBg">#F7F7F7</color>
+    <color name="transparent">#00000000</color>
 </resources>
