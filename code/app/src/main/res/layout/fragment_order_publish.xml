@@ -9,32 +9,41 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="65dp"
+        android:layout_marginRight="20dp">
 
-        <include layout="@layout/toolbar" />
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:background="?attr/colorPrimary"/>
 
         <TextView
-            android:id="@+id/tv_publish"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_centerInParent="true"
-            tools:text="@string/publishText"/>
+            android:gravity="center_vertical"
+            android:text="@string/pubilishText"
+            android:textSize="22sp" />
 
         <ImageView
-            android:id="@+id/iv_paper_jet"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:layout_alignParentEnd="true"
-            android:src="@mipmap/paper_jet"/>
+            android:scaleType="fitCenter"
+            android:scaleX="0.6"
+            android:scaleY="0.6"
+            android:src="@mipmap/paper_jet" />
+
+
 
     </RelativeLayout>
 
 
-    <com.youth.banner.Banner
-        android:id="@+id/banner"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/bannerHeight"/>
+
 
 
 </LinearLayout>
