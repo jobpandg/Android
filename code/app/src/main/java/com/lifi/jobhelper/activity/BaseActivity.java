@@ -62,6 +62,11 @@ abstract public class BaseActivity extends AppCompatActivity {
         return super.onKeyDown(keyCode, event);
     }
 
+    public void enableBackIcon(boolean flag) {
+        if (flag) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
+    }
 
 
 }

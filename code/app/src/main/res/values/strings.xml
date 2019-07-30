@@ -4,4 +4,6 @@
     <string name="mainTab_orderReceive">接单</string>
     <string name="mainTab_message">消息中心</string>
     <string name="mainTab_me">个人中心</string>
+    <string name="pubilishText">发单</string>
+    <string name="publishText">发单</string>
 </resources>

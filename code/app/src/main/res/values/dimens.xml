@@ -2,5 +2,6 @@
 <resources>
     <dimen name="smallViewHeight">1dp</dimen>
     <dimen name="mainTabHeight">63dp</dimen>
+    <dimen name="bannerHeight">195dp</dimen>
 
 </resources>
